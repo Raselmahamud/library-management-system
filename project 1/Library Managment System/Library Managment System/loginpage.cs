@@ -31,7 +31,7 @@ namespace Library_Managment_System
 
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            if (dt.Rows[0][0].ToString() == "0")
             {
 
                 Homepage homr = new Homepage();

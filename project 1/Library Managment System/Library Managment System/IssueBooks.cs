@@ -69,17 +69,7 @@ namespace Library_Managment_System
            
             ibook.ValueMember = "BookName";
             ibook.DataSource = dtt;
-            SqlCommand cmmd2 = new SqlCommand("select BookName from MathTable", conn);
-
-            SqlDataReader rdrr2;
-            rdrr2= cmmd.ExecuteReader();
-
-            DataTable dtt2 = new DataTable();
-            dtt2.Columns.Add("BookName", typeof(string));
-            dtt2.Load(rdrr2);
-
-            ibook.ValueMember = "BookName";
-            ibook.DataSource = dtt2;
+            
             conn.Close();
         }
        
@@ -213,7 +203,6 @@ namespace Library_Managment_System
             Istd.SelectedValue = issueDGV.SelectedRows[0].Cells[1].Value.ToString();
             stNametb.Text = issueDGV.SelectedRows[0].Cells[2].Value.ToString();
             istDepartment.Text = issueDGV.SelectedRows[0].Cells[3].Value.ToString();
-
             istPhone.Text = issueDGV.SelectedRows[0].Cells[4].Value.ToString();
             ibook.SelectedValue = issueDGV.SelectedRows[0].Cells[5].Value.ToString();
             issueDate.Text = issueDGV.SelectedRows[0].Cells[6].Value.ToString();
