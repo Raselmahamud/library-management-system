@@ -68,5 +68,10 @@ namespace Library_Managment_System
             Home.Show();
             this.Hide();
         }
+
+        private void Department_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

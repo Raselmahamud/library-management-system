@@ -128,7 +128,7 @@ namespace Library_Managment_System
             this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(208, 110);
+            this.button1.Location = new System.Drawing.Point(148, 103);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(378, 95);
             this.button1.TabIndex = 23;
@@ -140,7 +140,7 @@ namespace Library_Managment_System
             // 
             this.HOME.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.HOME.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HOME.Location = new System.Drawing.Point(325, 629);
+            this.HOME.Location = new System.Drawing.Point(265, 622);
             this.HOME.Name = "HOME";
             this.HOME.Size = new System.Drawing.Size(119, 44);
             this.HOME.TabIndex = 24;
@@ -154,7 +154,7 @@ namespace Library_Managment_System
             this.button4.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.Location = new System.Drawing.Point(208, 211);
+            this.button4.Location = new System.Drawing.Point(148, 204);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(378, 95);
             this.button4.TabIndex = 23;
@@ -168,7 +168,7 @@ namespace Library_Managment_System
             this.button5.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(208, 312);
+            this.button5.Location = new System.Drawing.Point(148, 305);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(378, 95);
             this.button5.TabIndex = 23;
@@ -182,7 +182,7 @@ namespace Library_Managment_System
             this.button6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(208, 413);
+            this.button6.Location = new System.Drawing.Point(148, 406);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(378, 95);
             this.button6.TabIndex = 23;
@@ -196,7 +196,7 @@ namespace Library_Managment_System
             this.button7.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button7.Location = new System.Drawing.Point(208, 514);
+            this.button7.Location = new System.Drawing.Point(148, 507);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(378, 95);
             this.button7.TabIndex = 23;
@@ -208,7 +208,7 @@ namespace Library_Managment_System
             // 
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(668, 101);
+            this.panel5.Location = new System.Drawing.Point(643, 103);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(759, 575);
             this.panel5.TabIndex = 25;
@@ -232,6 +232,7 @@ namespace Library_Managment_System
             this.Name = "Department";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Department";
+            this.Load += new System.EventHandler(this.Department_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -132,5 +132,45 @@ namespace Library_Managment_System
             maVersion.Text = mabookDGV.SelectedRows[0].Cells[3].Value.ToString();
             maQuantity.Text = mabookDGV.SelectedRows[0].Cells[4].Value.ToString();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "select * from MathTable";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            mabookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select * from MathTable where BookName = '" + serch.Text + "' or Author= '" + serch.Text + "' ";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            mabookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            maBookName.Text = " ";
+            maAuthor.Text = " ";
+            maPublisher.Text = " ";
+            maVersion.Text = " ";
+            maQuantity.Text = " ";
+
+        }
     }
 }

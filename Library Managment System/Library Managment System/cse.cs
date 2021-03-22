@@ -60,7 +60,12 @@ namespace Library_Managment_System
                 MessageBox.Show("Error" + es);
             }
             populatel();
+
+          
+
         }
+        
+
         public void populatel()
         {
             conn.Open();
@@ -74,6 +79,8 @@ namespace Library_Managment_System
 
 
         }
+
+       
 
         private void ADD_Click(object sender, EventArgs e)
         {
@@ -139,5 +146,54 @@ namespace Library_Managment_System
             Price.Text = bookDGV.SelectedRows[0].Cells[3].Value.ToString();
             Quantity.Text = bookDGV.SelectedRows[0].Cells[4].Value.ToString();
         }
+
+        private void Searchbox_TextChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchb_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query  = "select * from csetable1 where BookName = '"+search.Text+"' or Author= '"+search.Text+"' ";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            bookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "select * from csetable1";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            bookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            BookName.Text = " ";
+            Author.Text = " ";
+            Publisher.Text = " ";
+            Price.Text = " ";
+            Quantity.Text = " ";
+       }
     }
     }

@@ -58,7 +58,8 @@ namespace Library_Managment_System
         private void FillBook()
         {
             conn.Open();
-            SqlCommand cmmd = new SqlCommand("select BookName from csetable1", conn);
+            
+            SqlCommand cmmd = new SqlCommand(" select  BookName  from csetable1 ", conn);
             
             SqlDataReader rdrr;
             rdrr = cmmd.ExecuteReader();
@@ -71,6 +72,8 @@ namespace Library_Managment_System
             ibook.DataSource = dtt;
             
             conn.Close();
+            
+
         }
        
         private void fetchstddata()

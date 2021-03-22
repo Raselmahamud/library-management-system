@@ -130,5 +130,38 @@ namespace Library_Managment_System
             eeVersion.Text = eebookDGV.SelectedRows[0].Cells[3].Value.ToString();
             eeQuantity.Text = eebookDGV.SelectedRows[0].Cells[4].Value.ToString();
         }
+
+        private void searchb_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select * from EEETable where BookName = '" + searche.Text + "' or Author= '" + searche.Text + "' ";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            eebookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "select * from EEETable";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            eebookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            eeBookName.Text = " ";
+            eeAuthor.Text = " ";
+            eePublisher.Text = " ";
+            eeVersion.Text = " ";
+            eeQuantity.Text = " ";
+        }
     }
 }

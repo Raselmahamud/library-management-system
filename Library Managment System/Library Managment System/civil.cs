@@ -131,5 +131,26 @@ namespace Library_Managment_System
             ciVersion.Text = cibookDGV.SelectedRows[0].Cells[3].Value.ToString();
             ciQuantity.Text = cibookDGV.SelectedRows[0].Cells[4].Value.ToString();
         }
+
+        private void searchb_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string query = "select * from CivilTable1 where BookName = '" + searchc.Text + "' or Author= '" + searchc.Text + "' ";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            cibookDGV.DataSource = ds.Tables[0];
+            conn.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ciBookName.Text = " ";
+            ciAuthor.Text = " ";
+            ciPublisher.Text = " ";
+            ciVersion.Text = " ";
+            ciQuantity.Text = " ";
+        }
     }
 }
